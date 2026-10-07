@@ -4,6 +4,9 @@
 
 I trained and compared models on 284,807 real card transactions and picked the alert cutoff by **money**, not by a default setting. The results are in an interactive **Tableau** workbook with sliders for model, cutoff and review cost.
 
+[![Dashboard preview: score histogram with a live cutoff line](tableau/images/4_drawing_the_line.png)](https://public.tableau.com/app/profile/solomon.shasanmi/viz/CreditCardFraudAnalysis_17914054926190/Story1)
+*Click the image to open the live dashboard.*
+
 | | |
 |---|---|
 | **Data** | ULB / Worldline credit card fraud dataset: 284,807 transactions over 2 days (Sept 2013), 492 frauds (0.17%) |
