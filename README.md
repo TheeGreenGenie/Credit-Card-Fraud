@@ -97,13 +97,25 @@ Or open [`tableau/Fraud_Detection.twbx`](tableau/Fraud_Detection.twbx) in the fr
 | What it's worth | Alert queue with filters, € caught / missed / review cost / net savings |
 | What it's worth 2 | Cost-vs-cutoff curve that moves with the review-cost slider |
 
-**Interactive controls:** model, cutoff (0.001–0.999) and review cost (€). Static images are in [`tableau/images/`](tableau/images/). [`docs/Tableau_Build_Tutorial.md`](docs/Tableau_Build_Tutorial.md) rebuilds everything click by click, with check numbers.
+**Interactive controls:** model, cutoff (0.001–0.999) and review cost (€). Static images of every dashboard are in [`tableau/images/`](tableau/images/).
 
 ---
 
 ## Reproduce it
 
-Setup (one time): follow [`docs/Environment_Setup.md`](docs/Environment_Setup.md) to create the `FraudVenv` venv and install `requirements.txt`. Then, from the `Fraud_Detection` folder with the venv active:
+Requires Python 3.13 (3.11 also works if `shap` won't install on 3.13). Commands are for Windows PowerShell, run from the `Fraud_Detection` folder.
+
+**One-time setup:**
+
+```powershell
+py -3.13 -m venv FraudVenv
+.\FraudVenv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python -m ipykernel install --user --name FraudVenv --display-name "Python (FraudVenv)"
+```
+
+**Run the analysis** (with the venv active):
 
 ```powershell
 python python\01_get_data.py      # downloads the data from OpenML and checks 284,807 rows / 492 frauds
@@ -120,9 +132,9 @@ Fraud_Detection/
 ├── notebooks/fraud_detection.ipynb   full analysis, run top to bottom with outputs saved
 ├── python/                           01_get_data.py, verify.py, common.py (shared settings)
 ├── tableau/                          Fraud_Detection.twbx, CSV extracts, images/
-├── output/Findings_Report.html       5-page plain-language report
-├── docs/                             Environment_Setup, Tableau_Build_Tutorial
-└── data/                             raw/ (git-ignored, ~150 MB), processed/ (splits, metrics.json)
+├── output/                           Fraud_Detection.pdf and Findings_Report.html (5-page plain-language report)
+├── data/                             raw/ (git-ignored, ~150 MB), processed/ (splits, metrics.json)
+└── requirements.txt                  Python packages
 ```
 
 ---
