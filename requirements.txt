@@ -1,0 +1,14 @@
+# Fraud_Detection - Python dependencies
+# Install INSIDE the project venv (FraudVenv):  pip install -r requirements.txt
+# Minimum versions (>=) let pip pick the newest releases that are compatible with each other and Python 3.13.
+
+pandas>=2.2           # load and explore the 284,807 transactions, build the Tableau extracts
+numpy>=2.0            # numeric arrays underneath everything else
+scikit-learn>=1.5     # logistic regression, random forest, isolation forest, stratified splits, metrics
+imbalanced-learn>=0.13  # SMOTE and random undersampling, applied only inside training data via its Pipeline
+xgboost>=2.1          # gradient-boosted trees, the expected best model (scale_pos_weight for imbalance)
+shap>=0.46            # explains each prediction: which features pushed a transaction toward "fraud"
+matplotlib>=3.9       # charts inside the notebook and for the README / report
+notebook>=7.2         # the Jupyter notebook app (open and run fraud_detection.ipynb)
+ipykernel>=6.29       # lets Jupyter and VS Code run the notebook on this venv
+nbconvert>=7.16       # runs the notebook top to bottom from the command line and saves the outputs

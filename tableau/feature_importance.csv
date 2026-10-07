@@ -1,0 +1,31 @@
+Feature,MeanAbsSHAP,XGB_GainShare,Rank,Description
+V4,1.704198,0.041482,1,Anonymised PCA component
+V14,1.475319,0.442619,2,Anonymised PCA component
+V12,0.710661,0.037758,3,Anonymised PCA component
+V10,0.600445,0.146617,4,Anonymised PCA component
+V3,0.371541,0.009215,5,Anonymised PCA component
+V11,0.340865,0.01649,6,Anonymised PCA component
+V7,0.313675,0.014039,7,Anonymised PCA component
+V19,0.313385,0.01319,8,Anonymised PCA component
+V21,0.302034,0.012303,9,Anonymised PCA component
+Amount,0.294246,0.016921,10,Transaction amount (log EUR)
+V8,0.290192,0.012168,11,Anonymised PCA component
+V1,0.270416,0.013609,12,Anonymised PCA component
+V16,0.25801,0.012271,13,Anonymised PCA component
+V26,0.254895,0.009768,14,Anonymised PCA component
+V15,0.24906,0.010496,15,Anonymised PCA component
+V13,0.245655,0.012638,16,Anonymised PCA component
+V18,0.221175,0.010031,17,Anonymised PCA component
+V22,0.214812,0.008924,18,Anonymised PCA component
+V17,0.214471,0.062229,19,Anonymised PCA component
+Hour,0.211391,0.014218,20,Hour of day
+V2,0.208975,0.007788,21,Anonymised PCA component
+V5,0.208575,0.006045,22,Anonymised PCA component
+V25,0.187029,0.00894,23,Anonymised PCA component
+V24,0.17791,0.007609,24,Anonymised PCA component
+V20,0.166823,0.012529,25,Anonymised PCA component
+V9,0.165362,0.010703,26,Anonymised PCA component
+V27,0.161922,0.006891,27,Anonymised PCA component
+V28,0.143649,0.008743,28,Anonymised PCA component
+V23,0.129878,0.007123,29,Anonymised PCA component
+V6,0.101204,0.006645,30,Anonymised PCA component

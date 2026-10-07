@@ -1,0 +1,320 @@
+{
+  "rows": 284807,
+  "frauds": 492,
+  "fraud_rate": 0.001727485630620034,
+  "duplicates": 1081,
+  "split": [
+    {
+      "Split": "test",
+      "rows": 56962,
+      "frauds": 99,
+      "fraud_rate": 0.0017380007724447878
+    },
+    {
+      "Split": "train",
+      "rows": 170884,
+      "frauds": 295,
+      "fraud_rate": 0.0017263172678542169
+    },
+    {
+      "Split": "validation",
+      "rows": 56961,
+      "frauds": 98,
+      "fraud_rate": 0.0017204754130018785
+    }
+  ],
+  "features": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "LogAmount",
+    "HourSin",
+    "HourCos"
+  ],
+  "xgb_params": {
+    "max_depth": 5,
+    "scale_pos_weight": 24.0
+  },
+  "xgb_cv_grid": [
+    {
+      "max_depth": 5,
+      "scale_pos_weight": "sqrt ratio",
+      "spw_value": 24.0,
+      "cv_pr_auc": 0.8589486090755573,
+      "cv_std": 0.037114082707338715
+    },
+    {
+      "max_depth": 5,
+      "scale_pos_weight": "full ratio",
+      "spw_value": 578.3,
+      "cv_pr_auc": 0.8565889049250208,
+      "cv_std": 0.03558453486884277
+    },
+    {
+      "max_depth": 3,
+      "scale_pos_weight": "sqrt ratio",
+      "spw_value": 24.0,
+      "cv_pr_auc": 0.8525590084649982,
+      "cv_std": 0.03424767493364693
+    },
+    {
+      "max_depth": 3,
+      "scale_pos_weight": "full ratio",
+      "spw_value": 578.3,
+      "cv_pr_auc": 0.8371354826513245,
+      "cv_std": 0.02736026834886423
+    }
+  ],
+  "best_lr_technique": "SMOTE",
+  "winner": "XGBoost",
+  "thresholds": {
+    "Isolation Forest": 0.678,
+    "Logistic Regression": 0.999,
+    "Random Forest": 0.277,
+    "XGBoost": 0.262
+  },
+  "fp_cost": 10.0,
+  "tp_cost": 10.0,
+  "no_model_cost_validation": 12529.6,
+  "no_model_cost_test": 9874.35,
+  "peak_fraud_hour": 2,
+  "test": [
+    {
+      "Stage": "test",
+      "Model": "XGBoost",
+      "Imbalance": "scale_pos_weight (sqrt ratio)",
+      "PR_AUC": 0.8781988042549012,
+      "ROC_AUC": 0.9777734434189422,
+      "Accuracy": 0.9995611109160493,
+      "Threshold": 0.262,
+      "Precision": 0.8936170212765957,
+      "Recall": 0.8484848484848485,
+      "F1": 0.8704663212435233,
+      "TP": 84,
+      "FP": 10,
+      "FN": 15,
+      "TN": 56853,
+      "FraudCaughtEUR": 7366.379999999999,
+      "FraudMissedEUR": 2507.9700000000003,
+      "ReviewCost": 940.0,
+      "TotalCost": 3447.9700000000003,
+      "NetSavings": 6426.38
+    },
+    {
+      "Stage": "test",
+      "Model": "Random Forest",
+      "Imbalance": "balanced_subsample weights",
+      "PR_AUC": 0.8765538065655752,
+      "ROC_AUC": 0.9561068007333593,
+      "Accuracy": 0.9995084442259752,
+      "Threshold": 0.277,
+      "Precision": 0.8901098901098901,
+      "Recall": 0.8181818181818182,
+      "F1": 0.8526315789473683,
+      "TP": 81,
+      "FP": 10,
+      "FN": 18,
+      "TN": 56853,
+      "FraudCaughtEUR": 7156.290000000001,
+      "FraudMissedEUR": 2718.06,
+      "ReviewCost": 910.0,
+      "TotalCost": 3628.06,
+      "NetSavings": 6246.290000000001
+    },
+    {
+      "Stage": "test",
+      "Model": "Logistic Regression",
+      "Imbalance": "SMOTE",
+      "PR_AUC": 0.7655523481565064,
+      "ROC_AUC": 0.9667663036285866,
+      "Accuracy": 0.9991924440855307,
+      "Threshold": 0.999,
+      "Precision": 0.7345132743362832,
+      "Recall": 0.8383838383838383,
+      "F1": 0.7830188679245284,
+      "TP": 83,
+      "FP": 30,
+      "FN": 16,
+      "TN": 56833,
+      "FraudCaughtEUR": 7366.6,
+      "FraudMissedEUR": 2507.75,
+      "ReviewCost": 1130.0,
+      "TotalCost": 3637.75,
+      "NetSavings": 6236.6
+    },
+    {
+      "Stage": "test",
+      "Model": "Isolation Forest",
+      "Imbalance": "unsupervised",
+      "PR_AUC": 0.14695674323707847,
+      "ROC_AUC": 0.952789950398237,
+      "Accuracy": 0.9965942207085425,
+      "Threshold": 0.678,
+      "Precision": 0.16783216783216784,
+      "Recall": 0.24242424242424243,
+      "F1": 0.19834710743801653,
+      "TP": 24,
+      "FP": 119,
+      "FN": 75,
+      "TN": 56744,
+      "FraudCaughtEUR": 3997.29,
+      "FraudMissedEUR": 5877.0599999999995,
+      "ReviewCost": 1430.0,
+      "TotalCost": 7307.0599999999995,
+      "NetSavings": 2567.290000000001
+    }
+  ],
+  "imbalance_study": [
+    {
+      "Stage": "validation: imbalance study",
+      "Model": "Logistic Regression",
+      "Imbalance": "No adjustment",
+      "PR_AUC": 0.6750287732459359,
+      "ROC_AUC": 0.9691325767948529,
+      "Accuracy": 0.9990870946788153,
+      "Threshold": 0.5,
+      "Precision": 0.7948717948717948,
+      "Recall": 0.6326530612244898,
+      "F1": 0.7045454545454547,
+      "TP": 62,
+      "FP": 16,
+      "FN": 36,
+      "TN": 56847,
+      "FraudCaughtEUR": 4545.520000000001,
+      "FraudMissedEUR": 7984.079999999999,
+      "ReviewCost": 780.0,
+      "TotalCost": 8764.079999999998,
+      "NetSavings": 3765.5200000000023
+    },
+    {
+      "Stage": "validation: imbalance study",
+      "Model": "Logistic Regression",
+      "Imbalance": "Class weights",
+      "PR_AUC": 0.6847235239386777,
+      "ROC_AUC": 0.9807178872815326,
+      "Accuracy": 0.9768789171538421,
+      "Threshold": 0.5,
+      "Precision": 0.06182602444284687,
+      "Recall": 0.8775510204081632,
+      "F1": 0.11551376762928138,
+      "TP": 86,
+      "FP": 1305,
+      "FN": 12,
+      "TN": 55558,
+      "FraudCaughtEUR": 9406.24,
+      "FraudMissedEUR": 3123.36,
+      "ReviewCost": 13910.0,
+      "TotalCost": 17033.36,
+      "NetSavings": -4503.76
+    },
+    {
+      "Stage": "validation: imbalance study",
+      "Model": "Logistic Regression",
+      "Imbalance": "SMOTE",
+      "PR_AUC": 0.6853130989953121,
+      "ROC_AUC": 0.979048640717916,
+      "Accuracy": 0.9752286652270852,
+      "Threshold": 0.5,
+      "Precision": 0.05910006715916723,
+      "Recall": 0.8979591836734694,
+      "F1": 0.11090107120352866,
+      "TP": 88,
+      "FP": 1401,
+      "FN": 10,
+      "TN": 55462,
+      "FraudCaughtEUR": 10040.36,
+      "FraudMissedEUR": 2489.2400000000002,
+      "ReviewCost": 14890.0,
+      "TotalCost": 17379.24,
+      "NetSavings": -4849.640000000001
+    },
+    {
+      "Stage": "validation: imbalance study",
+      "Model": "Logistic Regression",
+      "Imbalance": "Undersampling",
+      "PR_AUC": 0.6381186957022416,
+      "ROC_AUC": 0.9750126243276447,
+      "Accuracy": 0.9618335352258562,
+      "Threshold": 0.5,
+      "Precision": 0.03825622775800712,
+      "Recall": 0.8775510204081632,
+      "F1": 0.0733162830349531,
+      "TP": 86,
+      "FP": 2162,
+      "FN": 12,
+      "TN": 54701,
+      "FraudCaughtEUR": 9760.400000000003,
+      "FraudMissedEUR": 2769.2000000000003,
+      "ReviewCost": 22480.0,
+      "TotalCost": 25249.2,
+      "NetSavings": -12719.6
+    }
+  ],
+  "top_features": [
+    {
+      "Feature": "V4",
+      "MeanAbsSHAP": 1.7041983604431152
+    },
+    {
+      "Feature": "V14",
+      "MeanAbsSHAP": 1.475319266319275
+    },
+    {
+      "Feature": "V12",
+      "MeanAbsSHAP": 0.7106606960296631
+    },
+    {
+      "Feature": "V10",
+      "MeanAbsSHAP": 0.6004446148872375
+    },
+    {
+      "Feature": "V3",
+      "MeanAbsSHAP": 0.3715406656265259
+    },
+    {
+      "Feature": "V11",
+      "MeanAbsSHAP": 0.3408651053905487
+    },
+    {
+      "Feature": "V7",
+      "MeanAbsSHAP": 0.31367456912994385
+    },
+    {
+      "Feature": "V19",
+      "MeanAbsSHAP": 0.3133848011493683
+    },
+    {
+      "Feature": "V21",
+      "MeanAbsSHAP": 0.3020338714122772
+    },
+    {
+      "Feature": "Amount",
+      "MeanAbsSHAP": 0.2942459285259247
+    }
+  ]
+}
